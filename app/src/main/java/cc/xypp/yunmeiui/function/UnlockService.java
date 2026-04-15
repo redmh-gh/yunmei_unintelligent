@@ -245,9 +245,11 @@ public class UnlockService {
 
             @Override
             public void onConnectFail(BleDevice bleDevice, BleException exception) {
-                quickConnect = false;
-                callback.setpss(0, "快速连接失败，使用常规模式尝试");
-                scan();
+                // quickConnect = false;
+                // callback.setpss(0, "快速连接失败，使用常规模式尝试");
+                // scan();
+                callback.setpss(0, "快速连接失败，请手动重试", true);
+                callback.end();
             }
 
             @Override
